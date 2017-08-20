@@ -1,0 +1,5 @@
+open_jtalk -x /usr/local/Cellar/open-jtalk/1.10_1/dic -m ~/voice/唱地ヨエ.htsvoice -ow out2.wav -fm 3.5 -a 0.5 -jf 0.6 ./t.txt ; and open out2.wav
+sox -n -r 44100 -c 2 silence.wav trim 0.0 3.0
+sox -n -r 48000 -c 1 silence.wav trim 0.0 3.0
+sox silence.wav out2.wav out2_fixed.wav
+sox -m out1.wav out2_fixed.wav res1.wav
